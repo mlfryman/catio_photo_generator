@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 ### 3. Run Scripts
 ```bash
-python3 .py
+python3 make_cat_photo_pdf.py
 ```
 
-The final output will be: 
+The final output will be: './output/catio_cat_photos.pdf'
