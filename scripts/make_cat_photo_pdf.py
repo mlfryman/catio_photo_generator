@@ -198,9 +198,9 @@ def build_pdf(images: list[str]) -> FPDF:
 
         # page number footer
         if count % (COLS * ROWS) == 0 or count == len(images):
-            pdf.set_font("Arial", size=10)
+            pdf.set_font("Helvetica", size=10)
             pdf.set_text_color(100, 100, 100)
-            pdf.text(x=page_w - 20, y=page_h - 10, txt=str(page_num))
+            pdf.text(x=page_w - 20, y=page_h - 10, text=str(page_num))
 
     return pdf
 
@@ -223,8 +223,10 @@ def main() -> None:
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     pdf.output(os.path.join(OUTPUT_DIR, OUTPUT_FILE))
+    print(f"{OUTPUT_FILE} saved to {OUTPUT_DIR}")
 
     cleanup_extracted_images()
+    print(f"Images deleted from {EXTRACT_DIR}")
 
 
 if __name__ == "__main__":
